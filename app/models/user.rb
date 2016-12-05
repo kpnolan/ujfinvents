@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
   #->Prelang (user_login/devise)
   belongs_to :event
+  belongs_to :measurement
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(provider: auth.provider, uid: auth.uid).first
 
