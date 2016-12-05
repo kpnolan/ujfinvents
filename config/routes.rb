@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :events
+
   resources :packages
 
   resources :rfid_tags
