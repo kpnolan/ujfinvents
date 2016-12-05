@@ -1,4 +1,5 @@
 ActiveAdmin.register Field do
+  permit_params :name, :num_rows, :num_columns
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
