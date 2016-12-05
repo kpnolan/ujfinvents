@@ -1,0 +1,31 @@
+<h1>Listing rfid_tags</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tag type</th>
+      <th>Tag</th>
+      <th>Plant</th>
+      <th>Package</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rfid_tags.each do |rfid_tag| %>
+      <tr>
+        <td><%= rfid_tag.tag_type %></td>
+        <td><%= rfid_tag.tag_id %></td>
+        <td><%= rfid_tag.plant %></td>
+        <td><%= rfid_tag.package %></td>
+        <td><%= link_to 'Show', rfid_tag %></td>
+        <td><%= link_to 'Edit', edit_rfid_tag_path(rfid_tag) %></td>
+        <td><%= link_to 'Destroy', rfid_tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rfid tag', new_rfid_tag_path %>

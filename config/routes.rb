@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :rfid_tags
+
   resources :metrics
 
   resources :unit_measures
