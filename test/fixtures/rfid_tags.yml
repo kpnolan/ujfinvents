@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tag_type: 
+  tag_id: MyString
+  plant_id: 
+  package_id: 
+
+two:
+  tag_type: 
+  tag_id: MyString
+  plant_id: 
+  package_id: 
