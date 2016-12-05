@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nominal reference:</strong>
+  <%= @unit_measure.nominal_reference %>
+</p>
+
+<p>
+  <strong>Unit measure:</strong>
+  <%= @unit_measure.unit_measure %>
+</p>
+
+<p>
+  <strong>Conversion:</strong>
+  <%= @unit_measure.conversion %>
+</p>
+
+<p>
+  <strong>Metric:</strong>
+  <%= @unit_measure.metric %>
+</p>
+
+<%= link_to 'Edit', edit_unit_measure_path(@unit_measure) %> |
+<%= link_to 'Back', unit_measures_path %>

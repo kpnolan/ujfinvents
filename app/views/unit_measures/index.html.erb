@@ -1,0 +1,31 @@
+<h1>Listing unit_measures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nominal reference</th>
+      <th>Unit measure</th>
+      <th>Conversion</th>
+      <th>Metric</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @unit_measures.each do |unit_measure| %>
+      <tr>
+        <td><%= unit_measure.nominal_reference %></td>
+        <td><%= unit_measure.unit_measure %></td>
+        <td><%= unit_measure.conversion %></td>
+        <td><%= unit_measure.metric %></td>
+        <td><%= link_to 'Show', unit_measure %></td>
+        <td><%= link_to 'Edit', edit_unit_measure_path(unit_measure) %></td>
+        <td><%= link_to 'Destroy', unit_measure, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Unit measure', new_unit_measure_path %>
