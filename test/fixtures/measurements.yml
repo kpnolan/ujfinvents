@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  label: MyString
+  ts_taken: 2016-12-05 12:39:12
+  device: MyString
+
+two:
+  label: MyString
+  ts_taken: 2016-12-05 12:39:12
+  device: MyString
