@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Label:</strong>
+  <%= @measurement.label %>
+</p>
+
+<p>
+  <strong>Ts taken:</strong>
+  <%= @measurement.ts_taken %>
+</p>
+
+<p>
+  <strong>Device:</strong>
+  <%= @measurement.device %>
+</p>
+
+<%= link_to 'Edit', edit_measurement_path(@measurement) %> |
+<%= link_to 'Back', measurements_path %>
