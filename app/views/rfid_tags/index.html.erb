@@ -1,31 +1,38 @@
-<h1>Listing rfid_tags</h1>
-
-<table>
+<%- model_class = RfidTag -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => RfidTag %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Tag type</th>
-      <th>Tag</th>
-      <th>Plant</th>
-      <th>Package</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:tag_type) %></th>
+      <th><%= model_class.human_attribute_name(:tag_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @rfid_tags.each do |rfid_tag| %>
       <tr>
+        <td><%= rfid_tag.id %></td>
         <td><%= rfid_tag.tag_type %></td>
         <td><%= rfid_tag.tag_id %></td>
-        <td><%= rfid_tag.plant %></td>
-        <td><%= rfid_tag.package %></td>
-        <td><%= link_to 'Show', rfid_tag %></td>
-        <td><%= link_to 'Edit', edit_rfid_tag_path(rfid_tag) %></td>
-        <td><%= link_to 'Destroy', rfid_tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l rfid_tag.created_at, format: :long %></td>
+        <td>
+          <%= link_to rfid_tag_path(rfid_tag), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to rfid_tag_path(rfid_tag), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Rfid tag', new_rfid_tag_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_rfid_tag_path,
+            :class => 'btn btn-primary' %>

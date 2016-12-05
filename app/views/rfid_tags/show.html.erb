@@ -1,24 +1,26 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = RfidTag -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => RfidTag %></h1>
+</div>
 
-<p>
-  <strong>Tag type:</strong>
-  <%= @rfid_tag.tag_type %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:tag_type) %></dt>
+      <dd><pre class="prettyprint"><%= @rfid_tag.tag_type %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:tag_id) %></dt>
+      <dd><pre class="prettyprint"><%= @rfid_tag.tag_id %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Tag:</strong>
-  <%= @rfid_tag.tag_id %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              rfid_tags_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_rfid_tag_path(@rfid_tag), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              rfid_tag_path(@rfid_tag),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Plant:</strong>
-  <%= @rfid_tag.plant %>
-</p>
-
-<p>
-  <strong>Package:</strong>
-  <%= @rfid_tag.package %>
-</p>
-
-<%= link_to 'Edit', edit_rfid_tag_path(@rfid_tag) %> |
-<%= link_to 'Back', rfid_tags_path %>
