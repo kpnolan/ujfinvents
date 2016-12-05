@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :fields
+
   resources :plants
 
   resources :strains
