@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nominal_reference: MyString
+  unit_measure_id: 
+  conversion_id: 
+  metric_id: 
+
+two:
+  nominal_reference: MyString
+  unit_measure_id: 
+  conversion_id: 
+  metric_id: 
