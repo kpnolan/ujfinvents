@@ -1,31 +1,36 @@
-<h1>Listing unit_measures</h1>
-
-<table>
+<%- model_class = UnitMeasure -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => UnitMeasure %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Nominal reference</th>
-      <th>Unit measure</th>
-      <th>Conversion</th>
-      <th>Metric</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:nominal_reference) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @unit_measures.each do |unit_measure| %>
       <tr>
+        <td><%= unit_measure.id %></td>
         <td><%= unit_measure.nominal_reference %></td>
-        <td><%= unit_measure.unit_measure %></td>
-        <td><%= unit_measure.conversion %></td>
-        <td><%= unit_measure.metric %></td>
-        <td><%= link_to 'Show', unit_measure %></td>
-        <td><%= link_to 'Edit', edit_unit_measure_path(unit_measure) %></td>
-        <td><%= link_to 'Destroy', unit_measure, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l unit_measure.created_at, format: :long %></td>
+        <td>
+          <%= link_to unit_measure_path(unit_measure), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to unit_measure_path(unit_measure), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Unit measure', new_unit_measure_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_unit_measure_path,
+            :class => 'btn btn-primary' %>
