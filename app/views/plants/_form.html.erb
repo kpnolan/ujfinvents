@@ -1,0 +1,16 @@
+<%= simple_form_for(@plant) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :field %>
+    <%= f.input :incept_date %>
+    <%= f.input :flower_date %>
+    <%= f.input :harvest_date %>
+    <%= f.association :harvest %>
+    <%= f.association :strain %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

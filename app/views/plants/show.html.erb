@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Field:</strong>
+  <%= @plant.field %>
+</p>
+
+<p>
+  <strong>Incept date:</strong>
+  <%= @plant.incept_date %>
+</p>
+
+<p>
+  <strong>Flower date:</strong>
+  <%= @plant.flower_date %>
+</p>
+
+<p>
+  <strong>Harvest date:</strong>
+  <%= @plant.harvest_date %>
+</p>
+
+<p>
+  <strong>Harvest:</strong>
+  <%= @plant.harvest %>
+</p>
+
+<p>
+  <strong>Strain:</strong>
+  <%= @plant.strain %>
+</p>
+
+<%= link_to 'Edit', edit_plant_path(@plant) %> |
+<%= link_to 'Back', plants_path %>

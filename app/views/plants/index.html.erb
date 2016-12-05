@@ -1,0 +1,35 @@
+<h1>Listing plants</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Incept date</th>
+      <th>Flower date</th>
+      <th>Harvest date</th>
+      <th>Harvest</th>
+      <th>Strain</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @plants.each do |plant| %>
+      <tr>
+        <td><%= plant.field %></td>
+        <td><%= plant.incept_date %></td>
+        <td><%= plant.flower_date %></td>
+        <td><%= plant.harvest_date %></td>
+        <td><%= plant.harvest %></td>
+        <td><%= plant.strain %></td>
+        <td><%= link_to 'Show', plant %></td>
+        <td><%= link_to 'Edit', edit_plant_path(plant) %></td>
+        <td><%= link_to 'Destroy', plant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Plant', new_plant_path %>
