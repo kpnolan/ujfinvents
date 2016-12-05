@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  field_id: 
+  incept_date: 2016-12-05
+  flower_date: 2016-12-05
+  harvest_date: 2016-12-05
+  harvest_id: 
+  strain_id: 
+
+two:
+  field_id: 
+  incept_date: 2016-12-05
+  flower_date: 2016-12-05
+  harvest_date: 2016-12-05
+  harvest_id: 
+  strain_id: 
