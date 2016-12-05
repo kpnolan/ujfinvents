@@ -1,16 +1,28 @@
-<%= simple_form_for(@plant) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.association :field %>
-    <%= f.input :incept_date %>
-    <%= f.input :flower_date %>
-    <%= f.input :harvest_date %>
-    <%= f.association :harvest %>
-    <%= f.association :strain %>
+<%= form_for @plant, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :incept_date, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.date_select :incept_date, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :flower_date, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.date_select :flower_date, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :harvest_date, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.date_select :harvest_date, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  plants_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
